@@ -128,7 +128,6 @@ export default function Login() {
                   placeholder=" "
                   autoComplete="current-password"
                   {...register("password")}
-                  ref={pwdRef}
                   className={`${styles.input} ${errors.password ? styles.err : ""}`}
                 />
                 <label className={styles.flabel}>Password</label>
@@ -138,7 +137,7 @@ export default function Login() {
                   className={styles.eyeBtn}
                   onClick={() => {
                     setShowPassword(!showPassword);
-                    pwdRef.current?.focus();
+                    document.querySelector('input[name="password"]').focus();
                   }}
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
