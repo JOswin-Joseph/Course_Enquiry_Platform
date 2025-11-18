@@ -12,9 +12,6 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 const Home = lazy(() => import('./pages/Home'));
 const Courses = lazy(() => import('./pages/Courses'));
 const CourseDetail = lazy(() => import('./pages/CourseDetail'));
-const Pricing = lazy(() => import('./pages/Pricing'));
-const Instructors = lazy(() => import('./pages/Instructors'));
-const InstructorProfile = lazy(() => import('./pages/InstructorProfile'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const FAQ = lazy(() => import('./pages/FAQ'));
@@ -40,9 +37,6 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/courses" element={<Courses />} />
                     <Route path="/courses/:slug" element={<CourseDetail />} />
-                    <Route path="/pricing" element={<Pricing />} />
-                    <Route path="/instructors" element={<Instructors />} />
-                    <Route path="/instructors/:id" element={<InstructorProfile />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:slug" element={<BlogArticle />} />
                     <Route path="/faq" element={<FAQ />} />

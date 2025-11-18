@@ -1,6 +1,6 @@
 :root {
-  --accent: #2f6fed;
-  --dark: #0a2a5e;
+  --accent: #0a2a5e;
+  --dark: #0f172a;
   --light-bg: #f6f9ff;
   --muted: #6b7280;
 }
@@ -13,7 +13,7 @@
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #3164e0, #2348a0);
+  background: linear-gradient(135deg, #0f2f63, #0f172a);
   padding: 4.5rem 1.5rem;
   color: white;
   text-align: left;
@@ -182,7 +182,7 @@
   margin-top: 1.3rem;
   width: 100%;
   padding: 1rem;
-  background: #3164e0;
+  background: #1847bf;
   color: white;
   border: none;
   border-radius: 10px;
