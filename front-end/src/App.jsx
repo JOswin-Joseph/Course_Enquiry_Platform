@@ -19,6 +19,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Careers = lazy(() => import('./pages/Careers'));
 const Login = lazy(() => import('./pages/Login'));
 const Signup = lazy(() => import('./pages/Signup'));
 const UserDashboard = lazy(() => import('./pages/UserDashboard'));
@@ -46,6 +47,7 @@ function App() {
                     <Route path="/blog/:slug" element={<BlogArticle />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/careers" element={<Careers />} />
 
                     {/* Auth routes - redirect to dashboard if already logged in */}
                     <Route path="/login" element={<Login />} />
