@@ -8,7 +8,7 @@ import Footer from './components/common/Footer';
 import Loader from './components/common/Loader';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
-// Lazy load pages for better performance
+// Lazy load pages
 const Home = lazy(() => import('./pages/Home'));
 const Courses = lazy(() => import('./pages/Courses'));
 const CourseDetail = lazy(() => import('./pages/CourseDetail'));
@@ -22,6 +22,9 @@ const Signup = lazy(() => import('./pages/Signup'));
 const UserDashboard = lazy(() => import('./pages/UserDashboard'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
+// ✅ NEW About Page Lazy Import
+const About = lazy(() => import('./pages/About'));
+
 function App() {
   return (
     <BrowserRouter>
@@ -29,11 +32,13 @@ function App() {
         <ToastProvider>
           <div className="app" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <Header />
+
             <main style={{ flex: 1, marginTop: '80px' }}>
               <Suspense fallback={<Loader fullScreen />}>
                 <AnimatePresence mode="wait">
                   <Routes>
-                    {/* Public routes */}
+
+                    {/* Public Routes */}
                     <Route path="/" element={<Home />} />
                     <Route path="/courses" element={<Courses />} />
                     <Route path="/courses/:slug" element={<CourseDetail />} />
@@ -43,11 +48,14 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/careers" element={<Careers />} />
 
-                    {/* Auth routes - redirect to dashboard if already logged in */}
+                    {/* ✅ NEW About Route */}
+                    <Route path="/about" element={<About />} />
+
+                    {/* Auth Routes */}
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
 
-                    {/* Protected user routes */}
+                    {/* Protected User Route */}
                     <Route
                       path="/user/dashboard"
                       element={
@@ -57,7 +65,7 @@ function App() {
                       }
                     />
 
-                    {/* Protected admin routes */}
+                    {/* Protected Admin Route */}
                     <Route
                       path="/admin/dashboard"
                       element={
@@ -67,12 +75,14 @@ function App() {
                       }
                     />
 
-                    {/* Fallback route */}
+                    {/* Fallback */}
                     <Route path="*" element={<Navigate to="/" replace />} />
+
                   </Routes>
                 </AnimatePresence>
               </Suspense>
             </main>
+
             <Footer />
           </div>
         </ToastProvider>
@@ -81,4 +91,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;

@@ -1,5 +1,15 @@
 import { Link } from 'react-router-dom';
-import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import {
+  GraduationCap,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram
+} from 'lucide-react';
+
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -13,7 +23,7 @@ const Footer = () => {
       { label: 'Cloud Computing', path: '/courses?category=Cloud Computing' },
     ],
     company: [
-      { label: 'About Us', path: '/about' },
+      { label: 'About Us', path: '/about' },   // ✅ Correct About Us route
       { label: 'Instructors', path: '/instructors' },
       { label: 'Blog', path: '/blog' },
       { label: 'Careers', path: '/careers' },
@@ -36,25 +46,33 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
+
+        {/* Top Section */}
         <div className={styles.topSection}>
+          
+          {/* Brand Section */}
           <div className={styles.brandSection}>
             <Link to="/" className={styles.logo}>
               <GraduationCap size={32} />
               <span>Coursify</span>
             </Link>
+
             <p className={styles.description}>
               Empowering learners worldwide with industry-relevant skills and expert-led courses.
               Transform your career with us.
             </p>
+
             <div className={styles.contactInfo}>
               <a href="mailto:info@takeoffupskill.com" className={styles.contactItem}>
                 <Mail size={18} />
                 info@takeoffupskill.com
               </a>
+
               <a href="tel:+1234567890" className={styles.contactItem}>
                 <Phone size={18} />
                 +1 (234) 567-890
               </a>
+
               <div className={styles.contactItem}>
                 <MapPin size={18} />
                 123 Learning St, Tech City
@@ -62,7 +80,9 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Links Section */}
           <div className={styles.linksSection}>
+
             <div className={styles.linkColumn}>
               <h3>Courses</h3>
               {footerLinks.courses.map((link) => (
@@ -89,20 +109,24 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
+
           </div>
         </div>
 
+        {/* Bottom Section */}
         <div className={styles.bottomSection}>
+          
           <p className={styles.copyright}>
             {currentYear} TakeOff Upskill. All rights reserved.
           </p>
+
           <div className={styles.socialLinks}>
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.url}
-                className={styles.socialLink}
                 aria-label={social.label}
+                className={styles.socialLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -111,6 +135,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
+
       </div>
     </footer>
   );
