@@ -1,19 +1,18 @@
 // src/pages/Signup.jsx
 
-import { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { motion } from 'framer-motion';
-import { UserPlus, Eye, EyeOff, Mail, User, Lock } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
-import { useToast } from '../hooks/useToast';
-import { signupSchema } from '../utils/validators';
-import { setPageTitle } from '../utils/helpers';
-import PageTransition from '../components/layout/PageTransition';
-import styles from './Login.module.css';
+import { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { motion } from "framer-motion";
+import { UserPlus, Eye, EyeOff, Mail, User, Lock } from "lucide-react";
+import { useToast } from "../hooks/useToast";
+import { signupSchema } from "../utils/validators";
+import { setPageTitle } from "../utils/helpers";
+import PageTransition from "../components/layout/PageTransition";
+import styles from "./Login.module.css";
 
-import { signupUser, setAuthData } from "../services/auth"; // ✅ real backend API
+import { signupUser, setAuthData } from "../services/auth";
 
 export default function Signup() {
   const { success, error } = useToast();
@@ -31,28 +30,23 @@ export default function Signup() {
     resolver: yupResolver(signupSchema),
   });
 
-  useEffect(() => setPageTitle('Sign Up'), []);
+  useEffect(() => setPageTitle("Sign Up"), []);
 
-  // Autofill sync for browser autofill
+  // Autofill sync
   useEffect(() => {
     const sync = () => {
-      const name = document.querySelector('input[name="name"]');
-      const email = document.querySelector('input[name="email"]');
-      const pwd = document.querySelector('input[name="password"]');
-      const confirm = document.querySelector('input[name="confirmPassword"]');
-
-      if (name?.value) setValue('name', name.value);
-      if (email?.value) setValue('email', email.value);
-      if (pwd?.value) setValue('password', pwd.value);
-      if (confirm?.value) setValue('confirmPassword', confirm.value);
+      const fields = ["name", "email", "password", "confirmPassword"];
+      fields.forEach((field) => {
+        const el = document.querySelector(`input[name="${field}"]`);
+        if (el?.value) setValue(field, el.value);
+      });
     };
-
     sync();
     const t = setTimeout(sync, 300);
     return () => clearTimeout(t);
   }, [setValue]);
 
-  // ✅ Updated submit function
+  // Submit
   const onSubmit = async (data) => {
     setIsLoading(true);
     try {
@@ -63,15 +57,11 @@ export default function Signup() {
         return;
       }
 
-      // Save token + user
       setAuthData(response.token, response.user);
-
       success("Account created successfully!");
-
-      // Redirect user dashboard (Admin is manually added in DB)
       navigate("/user/dashboard", { replace: true });
 
-    } catch (err) {
+    } catch {
       error("Signup failed. Try again.");
     } finally {
       setIsLoading(false);
@@ -87,34 +77,35 @@ export default function Signup() {
           className={styles.cardWrap}
           initial={{ opacity: 0, y: 12, scale: 0.995 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ type: 'spring', stiffness: 220, damping: 24 }}
+          transition={{ type: "spring", stiffness: 220, damping: 24 }}
           role="main"
           aria-labelledby="signup-title"
         >
           <header className={styles.header}>
-            <div className={styles.logoCircle} aria-hidden>
+            <div className={styles.logoCircle}>
               <UserPlus size={28} />
             </div>
-            <h1 id="signup-title" className={styles.title}>Create an account</h1>
-            <p className={styles.subtitle}>Start your learning journey with Coursify</p>
+            <h1 id="signup-title" className={styles.title}>
+              Create an account
+            </h1>
+            <p className={styles.subtitle}>
+              Start your learning journey with Coursify
+            </p>
           </header>
 
-          {/* ✅ FIXED: handleSubmit + register correctly applied */}
+          {/* FORM */}
           <form onSubmit={handleSubmit(onSubmit)} className={styles.form} noValidate>
 
-            {/* Full name */}
+            {/* Full Name */}
             <div className={styles.field}>
               <div className={styles.fieldInner}>
                 <span className={styles.leftIcon}><User size={14} /></span>
                 <input
-                  id="name"
                   placeholder=" "
-                  autoComplete="name"
-                  {...register('name', { required: true })}
-                  className={`${styles.input} ${errors.name ? styles.err : ''}`}
-                  aria-invalid={errors.name ? 'true' : 'false'}
+                  {...register("name", { required: true })}
+                  className={`${styles.input} ${errors.name ? styles.err : ""}`}
                 />
-                <label htmlFor="name" className={styles.flabel}>Full name</label>
+                <label className={styles.flabel}>Full name</label>
               </div>
               {errors.name && <div className={styles.error}>{errors.name.message}</div>}
             </div>
@@ -124,14 +115,11 @@ export default function Signup() {
               <div className={styles.fieldInner}>
                 <span className={styles.leftIcon}><Mail size={14} /></span>
                 <input
-                  id="email"
                   placeholder=" "
-                  autoComplete="email"
-                  {...register('email', { required: true })}
-                  className={`${styles.input} ${errors.email ? styles.err : ''}`}
-                  aria-invalid={errors.email ? 'true' : 'false'}
+                  {...register("email", { required: true })}
+                  className={`${styles.input} ${errors.email ? styles.err : ""}`}
                 />
-                <label htmlFor="email" className={styles.flabel}>Email address</label>
+                <label className={styles.flabel}>Email address</label>
               </div>
               {errors.email && <div className={styles.error}>{errors.email.message}</div>}
             </div>
@@ -141,20 +129,17 @@ export default function Signup() {
               <div className={styles.fieldInner}>
                 <span className={styles.leftIcon}><Lock size={14} /></span>
                 <input
-                  id="password"
                   placeholder=" "
                   type={showPassword ? "text" : "password"}
-                  autoComplete="new-password"
-                  {...register('password', { required: true })}
-                  className={`${styles.input} ${errors.password ? styles.err : ''}`}
-                  aria-invalid={errors.password ? 'true' : 'false'}
+                  {...register("password", { required: true })}
+                  className={`${styles.input} ${errors.password ? styles.err : ""}`}
                 />
-                <label htmlFor="password" className={styles.flabel}>Password</label>
+                <label className={styles.flabel}>Password</label>
 
                 <button
                   type="button"
                   className={styles.eyeBtn}
-                  onClick={() => setShowPassword((prev) => !prev)}
+                  onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -167,18 +152,19 @@ export default function Signup() {
               <div className={styles.fieldInner}>
                 <span className={styles.leftIcon}><Lock size={14} /></span>
                 <input
-                  id="confirmPassword"
                   placeholder=" "
                   type={showPassword ? "text" : "password"}
-                  {...register('confirmPassword', { required: true })}
-                  className={`${styles.input} ${errors.confirmPassword ? styles.err : ''}`}
-                  aria-invalid={errors.confirmPassword ? 'true' : 'false'}
+                  {...register("confirmPassword", { required: true })}
+                  className={`${styles.input} ${errors.confirmPassword ? styles.err : ""}`}
                 />
-                <label htmlFor="confirmPassword" className={styles.flabel}>Confirm password</label>
+                <label className={styles.flabel}>Confirm password</label>
               </div>
-              {errors.confirmPassword && <div className={styles.error}>{errors.confirmPassword.message}</div>}
+              {errors.confirmPassword && (
+                <div className={styles.error}>{errors.confirmPassword.message}</div>
+              )}
             </div>
 
+            {/* Button */}
             <div className={styles.actions}>
               <button type="submit" className={styles.primary} disabled={isLoading}>
                 {isLoading ? "Creating…" : "Create account"}
@@ -197,6 +183,7 @@ export default function Signup() {
               <Link to="/login" className={styles.link}>Sign in</Link>
             </p>
           </div>
+
         </motion.main>
       </div>
     </PageTransition>
