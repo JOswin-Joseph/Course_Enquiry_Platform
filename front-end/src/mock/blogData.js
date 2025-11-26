@@ -1,4 +1,3 @@
-// src/mock/blogData.js
 import fullstackImg from "../assets/images/fullstack.jpg";
 import datascienceImg from "../assets/images/datascience.jpg";
 import uiuxImg from "../assets/images/uiux.jpg";
@@ -13,246 +12,209 @@ const blogCourses = [
     title: "Full Stack Web Development Bootcamp",
     category: "Web Development",
     summary:
-      "Become job-ready by mastering front-end and back-end development using the MERN stack.",
+      "Become a full-stack developer in 12 weeks with hands-on projects and mentor support.",
     image: fullstackImg,
     details: `
-<h2>Full Stack Web Development Bootcamp</h2>
+<h2>How a Full Stack Web Development Course Can Shape Your Future</h2>
+<p>One of the most demanded skills in the market today is <b>Full Stack Web Development</b>, as it enables one to develop both the front-end and back-end of a website or web application. A full-stack developer is involved in designing user-friendly interfaces, managing servers, and handling databases.</p>
+<p><b>Takeoff Upskill</b> offers practical training that helps you master all levels of development using real-time projects. You’ll learn <b>HTML, CSS, JavaScript, React, and Node.js</b>, along with database management and project hosting. Whether you are a beginner or an experienced learner, Takeoff Upskill ensures you become a confident full-stack web developer.</p>
 
-<p>
-The Full Stack Web Development Bootcamp is an intensive, industry-oriented training program designed to transform learners into job-ready professional developers...
-</p>
+<h3>Why Choose Full Stack Web Development Course?</h3>
+<p>Full Stack Web Development is ideal for learners who want to know all aspects of building web applications. You don’t just code or design — you do both. This makes you capable of creating complete web solutions independently.</p>
+<p>Companies prefer hiring full-stack developers because they can handle multiple roles efficiently and complete projects faster.</p>
 
-<!-- (Course 1 unchanged — keeping your original full version) -->
-    `,
+<h3>Skills You Learn in Full Stack Web Development</h3>
+<ul>
+  <li>Front-End Development (HTML, CSS, JavaScript, React)</li>
+  <li>Back-End Technologies (Node.js, Express.js)</li>
+  <li>Database Management (MongoDB, MySQL)</li>
+  <li>Version Control (Git, GitHub)</li>
+  <li>API Integration and Deployment</li>
+</ul>
+
+<h3>Career Opportunities</h3>
+<p>After completing this course, you can work as a:</p>
+<ul>
+  <li>Full Stack Developer</li>
+  <li>Front-End Developer</li>
+  <li>Back-End Developer</li>
+  <li>Web Application Engineer</li>
+</ul>
+
+<h3>Benefits of Learning Full Stack Development</h3>
+<ul>
+  <li>Build entire web applications from scratch</li>
+  <li>Improve problem-solving and coding skills</li>
+  <li>Work on both design and functionality</li>
+  <li>High-paying job opportunities</li>
+</ul>
+
+<h3>Course Duration</h3>
+<p><b>12 Weeks (Online or Offline)</b></p>
+`,
   },
-
   {
     id: 2,
     slug: "data-science-machine-learning-masterclass",
     title: "Data Science & Machine Learning Masterclass",
     category: "Data Science",
     summary:
-      "Master Python, Data Analytics, Machine Learning, and real-time AI projects.",
+      "Transform your career with in-demand data science and machine learning skills.",
     image: datascienceImg,
     details: `
-<h2>Data Science & Machine Learning Masterclass</h2>
+<h2>Data Science & Machine Learning Masterclass Overview</h2>
+<p>Data Science combines <b>programming, statistics, and business intelligence</b> to extract insights from data. This course gives you hands-on experience in data cleaning, visualization, and predictive modeling using Python.</p>
 
-<p>
-The Data Science & Machine Learning Masterclass is an in-depth, project-driven program...
-</p>
+<h3>Why Choose Data Science?</h3>
+<p>Every business today relies on data for decision-making. Skilled data scientists are in high demand across industries such as healthcare, finance, and technology.</p>
 
-<!-- (Course 2 unchanged — keeping your original full version) -->
-    `,
+<h3>Skills You Learn</h3>
+<ul>
+  <li>Python for Data Science</li>
+  <li>Data Cleaning with Pandas</li>
+  <li>Data Visualization using Matplotlib and Seaborn</li>
+  <li>Machine Learning (Regression, Classification, Clustering)</li>
+  <li>Model Evaluation and Optimization</li>
+</ul>
+
+<h3>Career Opportunities</h3>
+<ul>
+  <li>Data Scientist</li>
+  <li>Machine Learning Engineer</li>
+  <li>Data Analyst</li>
+  <li>AI Engineer</li>
+</ul>
+
+<h3>Duration</h3>
+<p><b>10 Weeks (Project-based training)</b></p>
+`,
   },
-
   {
     id: 3,
     slug: "ui-ux-design-professional-certificate",
     title: "UI/UX Design Professional Certificate",
     category: "Design",
     summary:
-      "Master UI/UX design using Figma, wireframes, prototyping, and real-world projects.",
+      "Design modern, user-friendly applications using Figma and design systems.",
     image: uiuxImg,
     details: `
 <h2>UI/UX Design Professional Certificate</h2>
+<p>Every digital product today needs great design and usability. This course helps you master both <b>User Interface (UI)</b> and <b>User Experience (UX)</b> design, with a focus on creativity and usability.</p>
 
-<p>
-The UI/UX Design Professional Certificate is an advanced, industry-focused training program...
-</p>
+<h3>Why Choose UI/UX Design?</h3>
+<p>UI/UX design improves the way users interact with websites and apps. With Figma and other tools, you’ll learn how to turn ideas into interactive designs that users love.</p>
 
-<!-- (Course 3 unchanged — keeping your original full version) -->
-    `,
+<h3>Skills You Learn</h3>
+<ul>
+  <li>Design Thinking and Research</li>
+  <li>Wireframing and Prototyping</li>
+  <li>UI Layouts and Visual Design</li>
+  <li>Creating Design Systems</li>
+</ul>
+
+<h3>Career Roles</h3>
+<ul>
+  <li>UI/UX Designer</li>
+  <li>Product Designer</li>
+  <li>Interaction Designer</li>
+</ul>
+
+<h3>Duration</h3>
+<p><b>8 Weeks (Design-based practical learning)</b></p>
+`,
   },
-
   {
     id: 4,
     slug: "cloud-computing-with-aws",
-    title: "Cloud Computing with AWS — Complete Professional Training",
+    title: "Cloud Computing with AWS",
     category: "Cloud",
     summary:
-      "Master EC2, S3, IAM, Lambda, VPC, CloudFront, DevOps & real AWS deployments.",
+      "Master AWS services and deploy applications on the cloud.",
     image: cloudImg,
-
-    // ⭐ FULL UPDATED COURSE 4 CONTENT INSERTED HERE
     details: `
-<h2>Cloud Computing with AWS — Complete Professional Training</h2>
+<h2>Cloud Computing with AWS Course Overview</h2>
+<p>Cloud computing is the foundation of modern IT. This course teaches how to build and manage cloud infrastructure using <b>Amazon Web Services (AWS)</b>.</p>
 
-<p>
-The <b>Cloud Computing with AWS Professional Training Program</b> is one of the most comprehensive, industry-aligned, and job-oriented cloud courses designed to help learners build deep expertise in Amazon Web Services (AWS), the world’s #1 cloud platform. In today’s technology-driven era, companies across all industries—including e-commerce, healthcare, fintech, AI, government, cybersecurity, gaming, and enterprise IT—are rapidly migrating their infrastructure from traditional physical servers to the cloud. AWS powers millions of applications around the world, enabling organizations to scale globally, reduce costs, improve performance, and innovate faster.
-</p>
-
-<p>
-This training program provides a complete hands-on learning experience across real AWS services such as <b>EC2, S3, IAM, VPC, Lambda, CloudWatch, CloudFront, Route 53, RDS, DynamoDB, Aurora, ECR, ECS, Elastic Load Balancers, Auto Scaling Groups, API Gateway</b> and more. You will learn how cloud applications are designed, deployed, secured, monitored, automated, and optimized using AWS best practices. By the end of the program, you will have the skills needed to take on roles like <b>AWS Cloud Engineer, DevOps Engineer, Solutions Architect, Cloud Administrator, Infrastructure Engineer, Site Reliability Engineer (SRE), or Cloud Support Associate</b>.
-</p>
-
-<p>
-This detailed curriculum is structured exactly like top global AWS certification training programs. It follows real company workflows, real architectures, and real deployment environments. You will learn through examples, diagrams, implementation labs, live use cases, and full-scale cloud projects. Whether you are a beginner or intermediate learner, this program takes you from foundational concepts to advanced cloud design architecture so you can confidently work in enterprise cloud environments.
-</p>
-
-<h3>What is Cloud Computing?</h3>
-<p>
-Cloud computing is the delivery of computing services—including storage, networking, databases, servers, analytics, AI/ML, security, DevOps automation, and more—over the internet (“the cloud”). Instead of companies buying expensive hardware, maintaining data centers, and dealing with system failures, they use cloud providers like AWS that offer on-demand, pay-as-you-go, highly scalable resources.
-</p>
-
+<h3>Skills You Learn</h3>
 <ul>
-  <li><b>On-demand provisioning:</b> Create servers and databases instantly.</li>
-  <li><b>Scalability:</b> Automatically increase or decrease resources as needed.</li>
-  <li><b>High availability:</b> Fault-tolerant global infrastructure.</li>
-  <li><b>Security:</b> Enterprise-grade encryption, IAM, compliance.</li>
-  <li><b>Cost efficiency:</b> Pay only for usage, no upfront hardware cost.</li>
-  <li><b>Global reach:</b> Deploy apps across multiple regions worldwide.</li>
+  <li>AWS EC2, S3, and IAM</li>
+  <li>Networking and VPC</li>
+  <li>Serverless Architecture with Lambda</li>
+  <li>Application Deployment on AWS</li>
 </ul>
 
-<p>
-AWS pioneered cloud computing and continues to dominate the global market with more than 200 services. Companies like Netflix, Instagram, Uber, Adobe, NASA, Samsung, Twitter, Meta (Facebook), and Airbnb rely heavily on AWS because of its speed, automation, and scalability. Learning AWS means positioning yourself for one of the most in-demand and future-proof careers in the world.
-</p>
-
-<h3>Why AWS is the Most Important Skill in the IT Industry</h3>
-
-<p>
-Amazon Web Services (AWS) is the world’s largest and most powerful cloud platform. With over 32% of global cloud market share, it surpasses competitors like Google Cloud and Microsoft Azure. AWS provides a massive set of enterprise-grade tools for hosting websites, building machine learning pipelines, managing big data workloads, automating DevOps workflows, deploying microservices, running containers, powering mobile apps, and securing distributed applications.
-</p>
-
-<p><b>AWS is used by:</b></p>
+<h3>Career Roles</h3>
 <ul>
-  <li>Fortune 500 companies</li>
-  <li>Government organizations</li>
-  <li>Unicorn startups</li>
-  <li>E-commerce & fintech companies</li>
-  <li>Healthcare and education systems</li>
-  <li>AI/ML and cybersecurity firms</li>
-</ul>
-
-<p>
-Because AWS is the backbone of modern infrastructure, learning this skill dramatically increases your job opportunities. Cloud roles remain some of the highest-paid in IT.
-</p>
-
-<h3>Skills You Will Master in This AWS Program</h3>
-
-<h4>1. Compute — Amazon EC2</h4>
-<p>
-Learn how to deploy, configure, and scale EC2 servers for real applications.
-</p>
-<ul>
-  <li>Launching EC2 instances</li>
-  <li>Connecting with SSH keys</li>
-  <li>Security group configuration</li>
-  <li>Elastic IPs & ENIs</li>
-  <li>Hosting Node.js/Python/PHP apps</li>
-</ul>
-
-<h4>2. Auto Scaling & Load Balancing</h4>
-<ul>
-  <li>Application Load Balancer</li>
-  <li>Network Load Balancer</li>
-  <li>Auto Scaling Groups</li>
-  <li>High availability & fault tolerance</li>
-</ul>
-
-<h4>3. S3 & Cloud Storage</h4>
-<ul>
-  <li>Buckets, versioning, lifecycle rules</li>
-  <li>Static website hosting</li>
-  <li>CloudFront CDN streaming</li>
-  <li>Bucket policies & secure access</li>
-</ul>
-
-<h4>4. IAM Security</h4>
-<ul>
-  <li>Users, groups, roles, policies</li>
-  <li>MFA security</li>
-  <li>Least privilege access</li>
-</ul>
-
-<h4>5. VPC Networking</h4>
-<ul>
-  <li>Subnets (public/private)</li>
-  <li>Route tables</li>
-  <li>Internet/NAT gateways</li>
-  <li>VPC peering</li>
-</ul>
-
-<h4>6. Serverless Computing</h4>
-<ul>
-  <li>AWS Lambda functions</li>
-  <li>API Gateway Integration</li>
-  <li>Event-driven architectures</li>
-</ul>
-
-<h4>7. Databases</h4>
-<ul>
-  <li>RDS — SQL</li>
-  <li>Aurora — high performance</li>
-  <li>DynamoDB — NoSQL</li>
-</ul>
-
-<h4>8. Monitoring</h4>
-<ul>
-  <li>CloudWatch metrics</li>
-  <li>CloudTrail auditing</li>
-  <li>Billing alerts</li>
-</ul>
-
-<h4>9. Containers</h4>
-<ul>
-  <li>ECR</li>
-  <li>ECS</li>
-  <li>Fargate</li>
-</ul>
-
-<h3>Real-World Projects You Will Build</h3>
-
-<h4>Project 1 — Host a Website on S3 + CloudFront</h4>
-<p>Deploy static websites globally.</p>
-
-<h4>Project 2 — EC2 Deployed Web App</h4>
-<p>Host real backend apps with load balancers.</p>
-
-<h4>Project 3 — Serverless REST API</h4>
-<p>Create Lambda + API Gateway backend.</p>
-
-<h4>Project 4 — Multi-tier VPC Architecture</h4>
-<p>Build full enterprise network on AWS.</p>
-
-<h3>Career Opportunities</h3>
-<ul>
-  <li>AWS Cloud Engineer</li>
+  <li>Cloud Engineer</li>
   <li>DevOps Engineer</li>
-  <li>SRE</li>
-  <li>Solutions Architect</li>
+  <li>AWS Solutions Architect</li>
 </ul>
 
-<h3>Outcome</h3>
-<p>
-By completing this AWS training, you will be job-ready to design, deploy, secure, and monitor real cloud applications in enterprise environments.
-</p>
-    `,
+<h3>Duration</h3>
+<p><b>6 Weeks (Practical hands-on labs)</b></p>
+`,
   },
-
   {
     id: 5,
-    slug: "mobile-app-development-react-native",
+    slug: "mobile-app-development-with-react-native",
     title: "Mobile App Development with React Native",
     category: "Mobile Development",
-    summary: "Build Android & iOS apps using JavaScript and React Native.",
+    summary:
+      "Build cross-platform mobile apps with JavaScript and React Native.",
     image: mobileImg,
     details: `
-<!-- (Course 5 original content kept unchanged) -->
-    `,
-  },
+<h2>Mobile App Development with React Native</h2>
+<p>This course enables you to build mobile applications for both Android and iOS using a single codebase. React Native simplifies development using JavaScript and React principles.</p>
 
+<h3>Skills You Learn</h3>
+<ul>
+  <li>React Native Components</li>
+  <li>Navigation and Routing</li>
+  <li>REST API Integration</li>
+  <li>Debugging and Testing</li>
+</ul>
+
+<h3>Career Roles</h3>
+<ul>
+  <li>Mobile App Developer</li>
+  <li>React Native Developer</li>
+</ul>
+
+<h3>Duration</h3>
+<p><b>7 Weeks (Real-world app building)</b></p>
+`,
+  },
   {
     id: 6,
-    slug: "digital-marketing-seo-mastery",
+    slug: "digital-marketing-and-seo-mastery",
     title: "Digital Marketing & SEO Mastery",
     category: "Marketing",
     summary:
-      "Learn SEO, Google Ads, Social Media Strategy, and digital growth techniques.",
+      "Learn SEO and online marketing strategies to grow businesses.",
     image: marketingImg,
     details: `
-<!-- (Course 6 original content kept unchanged) -->
-    `,
+<h2>Digital Marketing & SEO Mastery</h2>
+<p>In this course, you’ll learn how to increase website visibility and brand awareness using modern digital marketing tools and SEO strategies.</p>
+
+<h3>Skills You Learn</h3>
+<ul>
+  <li>Search Engine Optimization (SEO)</li>
+  <li>Google Ads & Analytics</li>
+  <li>Social Media Marketing</li>
+  <li>Content Strategy</li>
+</ul>
+
+<h3>Career Roles</h3>
+<ul>
+  <li>Digital Marketing Executive</li>
+  <li>SEO Specialist</li>
+  <li>Content Strategist</li>
+</ul>
+
+<h3>Duration</h3>
+<p><b>6 Weeks (Live campaign training)</b></p>
+`,
   },
 ];
 
-export default blogCourses;
+export default blogCourses;
