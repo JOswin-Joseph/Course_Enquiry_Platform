@@ -41,7 +41,7 @@ function Blog() {
     <div className="blog-page">
       {/* ✅ Minimal Hero Section / Header Banner */}
       <section className="blog-hero">
-        <h1>Insights & Learning from Takeoff Upskill</h1>
+        <h1>Insights & Learning from Coursify</h1>
         <p>
           Explore our blogs to gain knowledge, learn career tips, and stay ahead
           in the tech world.

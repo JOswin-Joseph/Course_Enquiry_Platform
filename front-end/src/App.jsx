@@ -22,6 +22,9 @@ const Signup = lazy(() => import('./pages/Signup'));
 const UserDashboard = lazy(() => import('./pages/UserDashboard'));
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
 
+const AboutUs = lazy(() => import('./pages/About'));  // ⭐ ADD THIS
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -42,6 +45,7 @@ function App() {
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/careers" element={<Careers />} />
+                    <Route path="/about" element={<AboutUs />} />
 
                     {/* Auth routes - redirect to dashboard if already logged in */}
                     <Route path="/login" element={<Login />} />
